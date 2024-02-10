@@ -25,9 +25,9 @@ public class Main {
 
             // Provide a list of data file options
             System.out.println("Choose a data file (enter the corresponding number):");
-            System.out.println("1. DataFile1.txt");
-            System.out.println("2. DataFile2.txt");
-            System.out.println("3. DataFile3.txt");
+            System.out.println("1. testingData1.txt");
+            System.out.println("2. trainingData1.txt");
+            System.out.println("3. unknownData1.txt");
 
             // Get the user's choice for the data file
             int fileChoice;
