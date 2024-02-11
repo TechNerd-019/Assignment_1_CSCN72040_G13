@@ -1,4 +1,4 @@
-package com.mycompanyname;
+package assignment1_group13_cscn72040;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -58,11 +58,11 @@ public class Main {
             }
 
             // Read the data and labels from the file
-            double[][] data = DataReader.readData(filename); // Add the class name that reads the data from file
-            int[] labels = DataReader.readLabels(filename); // Add the class name that reads the data from file
+            double[][] data = File_IO.readData(filename); // Add the class name that reads the data from file
+            int[] labels = File_IO.readLabels(filename); // Add the class name that reads the data from file
 
             // Create the chosen classifier
-            NearestNeighbor nn = null;     // replace with the actual names
+            NearestNeighbor nn = new NearestNeighbor();     // replace with the actual names
             KNearestNeighbors knn = null; // replace with the actual names
             AnotherClassifier ac = null; // replace with the actual names
 
@@ -78,7 +78,7 @@ public class Main {
             }
 
             // Read the unknown data
-            double[][] unknownData = DataReader.readData("unknownData1.txt"); // replace with the actual class names
+            double[][] unknownData = File_IO.readData("unknownData1.txt"); // replace with the actual class names
 
             // Create a PrintWriter to write to a file
             PrintWriter writer = new PrintWriter("result.txt");
