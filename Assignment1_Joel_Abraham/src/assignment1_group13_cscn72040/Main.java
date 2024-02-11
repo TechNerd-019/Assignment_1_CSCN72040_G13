@@ -57,9 +57,9 @@ public class Main {
                     return;
             }
 
-            // Read the data and labels from the file
-            double[][] data = File_IO.readData(filename); // Add the class name that reads the data from file
-            int[] labels = File_IO.readLabels(filename); // Add the class name that reads the data from file
+            // Read the data and labels from the file using File_IO class
+            double[][] data = File_IO.readData(filename);
+            int[] labels = File_IO.readLabels(filename);
 
             // Create the chosen classifier
             NearestNeighbor nn = new NearestNeighbor();     // replace with the actual names
