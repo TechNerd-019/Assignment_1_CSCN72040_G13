@@ -86,34 +86,8 @@ public class KNNClassifier {
         return dataPoints;
     }
 
-    public static void main(String[] args) {
-        try {
-            // Read data from files
-            List<DataPoint> trainingData = readDataFromFile("trainingData1.txt");
-           
-
-            // Example usage
-            KNNClassifier knnClassifier = new KNNClassifier(trainingData);
-
-            // Example test point
-            double[] testPointFeatures = {0.0, 0.0, 0.0};
-            String testPointLabel = "ClassA";
-
-
-            DataPoint testPoint = new DataPoint(testPointFeatures,testPointLabel);
-
-            // Adjust the value of k based on your requirements
-            int k = 3;
-
-            String predictedClass = knnClassifier.classify(testPoint, k);
-            System.out.println("Predicted Class: " + predictedClass);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+  
 }
-
-
 
 class DataPoint {
     private double[] features;
