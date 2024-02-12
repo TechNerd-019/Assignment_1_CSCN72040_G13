@@ -62,8 +62,8 @@ public class Main {
             int[] labels = File_IO.readLabels(filename);
 
             // Create the chosen classifier
-            NearestNeighbor nn = new NearestNeighbor();     // replace with the actual names
-            KNearestNeighbors knn = null; // replace with the actual names
+            NearestNeighbor nn = new NearestNeighbor(data, labels);     // replace with the actual names
+            KNearestNeighbors knn = new KNNClassifier(null) ; // replace with the actual names
             AnotherClassifier ac = null; // replace with the actual names
 
             if (choice == 1) {
