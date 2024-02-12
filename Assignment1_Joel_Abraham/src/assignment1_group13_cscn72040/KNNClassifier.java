@@ -127,5 +127,5 @@ class DistanceLabelPair implements Comparable<DistanceLabelPair> {
     @Override
     public int compareTo(DistanceLabelPair other) {
         return Double.compare(this.distance, other.distance);
-    }
+    }
 }
