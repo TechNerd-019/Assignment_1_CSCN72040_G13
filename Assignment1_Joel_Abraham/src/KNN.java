@@ -1,9 +1,7 @@
 
-import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Map;
 
 public class KNN extends NN implements MainClassifier {
     private int k;
@@ -20,11 +18,11 @@ public class KNN extends NN implements MainClassifier {
             public int compare(double[] a, double[] b) {
                 double distanceA = 0.0;
                 double distanceB = 0.0;
-                for (int i = 0; i < a.length - 1; i++) { // Exclude label
+                for (int i = 0; i < a.length - 1; i++) {
                     distanceA += Math.pow(a[i] - testData[i], 2);
                     distanceB += Math.pow(b[i] - testData[i], 2);
                 }
-                return Double.compare(distanceB, distanceA); // Reverse order
+                return Double.compare(distanceB, distanceA);
             }
         });
 

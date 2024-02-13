@@ -35,7 +35,7 @@ public class NN implements MainClassifier  {
 
         for (double[] trainSample : trainingData) {
             double distance = 0.0;
-            for (int i = 0; i < trainSample.length - 1; i++) { // Exclude label
+            for (int i = 0; i < trainSample.length - 1; i++) {
                 distance += Math.pow(trainSample[i] - testData[i], 2);
             }
             

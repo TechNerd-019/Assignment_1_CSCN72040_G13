@@ -14,27 +14,38 @@ public class Main {
 	    System.out.println("2. K-Nearest Neighbor (KNN)");
 	    System.out.println("3. Another Classifier");
 	    int choice = scanner.nextInt();
-	    scanner.nextLine(); // Consume newline
+	    scanner.nextLine();
 
-	    String trainingFileName = "trainingData1.txt"; // Assuming this is your training data file
+	    String trainingFileName = "trainingData1.txt";
 
-	    // Initialize variables for test file and result file
+	   /*
+	    *The variables are declared, initialized, and user
+	    *choice is evaluated to determine outcome of the program.
+	    */
 	    String testFileName = "";
 	    String resultFileName = "result.txt";
 
 	    if (choice == 1) {
+	    	/*
+	    	 * Each class is instantiated and a new object
+	    	 * is created with the required parameters being passed
+	    	 * to the parameterized constructor.
+	    	 */
 	        NN nn = new NN(trainingFileName);
-	        // Ask the user to input the test file
+	        
+	     // Get input from user for which text file to work with:
 	        System.out.println("Please enter the test file name:");
 	        testFileName = scanner.nextLine();
 	        predictAndWrite(nn, testFileName, resultFileName);
 	        System.out.println("Prediction done using NN classifier. Check the result file.");
+	        
 	    } else if (choice == 2) {
 	        System.out.println("Please enter the value of k:");
 	        int k = scanner.nextInt();
-	        scanner.nextLine(); // Consume newline
+	        scanner.nextLine();
 	        KNN knn = new KNN(trainingFileName, k);
-	        // Ask the user to input the test file
+	        
+	        // Get input from user for which text file to work with:
 	        System.out.println("Please enter the test file name:");
 	        testFileName = scanner.nextLine();
 	        predictAndWrite(knn, testFileName, resultFileName);

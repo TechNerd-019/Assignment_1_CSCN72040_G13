@@ -1,4 +1,11 @@
-
+/*
+ * Subclass of MainClassifier.
+ * 
+ * This class contains all three function declarations which
+ * are printed when choosing "3" from the main class.
+ * 
+ * 
+ */
 
 public class AnotherClassifier implements MainClassifier  {
     public AnotherClassifier() {
