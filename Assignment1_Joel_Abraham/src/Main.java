@@ -6,42 +6,53 @@ import java.io.IOException;
 
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Phone Orientation App!");
-        System.out.println("Please choose one of the following classifiers:");
-        System.out.println("1. Nearest Neighbor (NN)");
-        System.out.println("2. K-Nearest Neighbor (KNN)");
-        System.out.println("3. Another Classifier");
-        int choice = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+	public static void main(String[] args) {
+	    Scanner scanner = new Scanner(System.in);
+	    System.out.println("Welcome to the Phone Orientation App!");
+	    System.out.println("Please choose one of the following classifiers:");
+	    System.out.println("1. Nearest Neighbor (NN)");
+	    System.out.println("2. K-Nearest Neighbor (KNN)");
+	    System.out.println("3. Another Classifier");
+	    int choice = scanner.nextInt();
+	    scanner.nextLine(); // Consume newline
 
-        String trainingFileName = "trainingData1.txt";
-        String testFileName = "unknownData1.txt"; 
-        String resultFileName = "result.txt"; 
+	    String trainingFileName = "trainingData1.txt"; // Assuming this is your training data file
 
-        if (choice == 1) {
-            NN nn = new NN(trainingFileName);
-            predictAndWrite(nn, testFileName, resultFileName);
-            System.out.println("Prediction done using NN classifier. Check the result file.");
-        } else if (choice == 2) {
-            System.out.println("Please enter the value of k:");
-            int k = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-            KNN knn = new KNN(trainingFileName, k);
-            predictAndWrite(knn, testFileName, resultFileName);
-            System.out.println("Prediction done using KNN classifier. Check the result file.");
-        } else if (choice == 3) {
-            AnotherClassifier ac = new AnotherClassifier();
-            ac.train(trainingFileName);
-            predictAndWrite(ac, testFileName, resultFileName);
-            System.out.println("Prediction done using Another Classifier. Check the result file.");
-        } else {
-            System.out.println("Invalid choice. Please try again.");
-        }
+	    // Initialize variables for test file and result file
+	    String testFileName = "";
+	    String resultFileName = "result.txt";
 
-        scanner.close();
-    }
+	    if (choice == 1) {
+	        NN nn = new NN(trainingFileName);
+	        // Ask the user to input the test file
+	        System.out.println("Please enter the test file name:");
+	        testFileName = scanner.nextLine();
+	        predictAndWrite(nn, testFileName, resultFileName);
+	        System.out.println("Prediction done using NN classifier. Check the result file.");
+	    } else if (choice == 2) {
+	        System.out.println("Please enter the value of k:");
+	        int k = scanner.nextInt();
+	        scanner.nextLine(); // Consume newline
+	        KNN knn = new KNN(trainingFileName, k);
+	        // Ask the user to input the test file
+	        System.out.println("Please enter the test file name:");
+	        testFileName = scanner.nextLine();
+	        predictAndWrite(knn, testFileName, resultFileName);
+	        System.out.println("Prediction done using KNN classifier. Check the result file.");
+	    } else if (choice == 3) {
+	        AnotherClassifier ac = new AnotherClassifier();
+	        ac.train(trainingFileName);
+	        // Ask the user to input the test file
+	        System.out.println("Please enter the test file name:");
+	        testFileName = scanner.nextLine();
+	        predictAndWrite(ac, testFileName, resultFileName);
+	        System.out.println("Prediction done using Another Classifier. Check the result file.");
+	    } else {
+	        System.out.println("Invalid choice. Please try again.");
+	    }
+
+	    scanner.close();
+	}
 
     private static void predictAndWrite(MainClassifier classifier, String testFileName, String resultFileName) {
         try (Scanner scanner = new Scanner(new FileInputStream(testFileName)); // Use FileInputStream
