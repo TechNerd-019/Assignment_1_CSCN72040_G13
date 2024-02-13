@@ -5,10 +5,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class PhoneOrientationNN implements PhoneOrientationClassifier  {
+public class NN implements MainClassifier  {
     private List<double[]> trainingData;
 
-    public PhoneOrientationNN(String fileName) {
+    public NN(String fileName) {
         this.trainingData = new ArrayList<>();
         loadTrainingData(fileName);
     }

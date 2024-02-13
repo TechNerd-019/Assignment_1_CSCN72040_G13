@@ -1,6 +1,6 @@
 
 
-public class AnotherClassifier implements PhoneOrientationClassifier  {
+public class AnotherClassifier implements MainClassifier  {
     public AnotherClassifier() {
         System.out.println("AnotherClassifier constructor");
     }

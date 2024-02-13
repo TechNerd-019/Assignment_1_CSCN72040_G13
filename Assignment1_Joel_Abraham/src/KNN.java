@@ -5,10 +5,10 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PhoneOrientationKNN extends PhoneOrientationNN implements PhoneOrientationClassifier {
+public class KNN extends NN implements MainClassifier {
     private int k;
 
-    public PhoneOrientationKNN(String fileName, int k) {
+    public KNN(String fileName, int k) {
         super(fileName);
         this.k = k;
     }

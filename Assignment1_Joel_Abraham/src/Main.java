@@ -1,4 +1,3 @@
-
 import java.io.FileInputStream;
 
 import java.util.Scanner;
@@ -6,7 +5,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 
-public class PhoneOrientationApp {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Phone Orientation App!");
@@ -22,14 +21,14 @@ public class PhoneOrientationApp {
         String resultFileName = "result.txt"; 
 
         if (choice == 1) {
-            PhoneOrientationNN nn = new PhoneOrientationNN(trainingFileName);
+            NN nn = new NN(trainingFileName);
             predictAndWrite(nn, testFileName, resultFileName);
             System.out.println("Prediction done using NN classifier. Check the result file.");
         } else if (choice == 2) {
             System.out.println("Please enter the value of k:");
             int k = scanner.nextInt();
             scanner.nextLine(); // Consume newline
-            PhoneOrientationKNN knn = new PhoneOrientationKNN(trainingFileName, k);
+            KNN knn = new KNN(trainingFileName, k);
             predictAndWrite(knn, testFileName, resultFileName);
             System.out.println("Prediction done using KNN classifier. Check the result file.");
         } else if (choice == 3) {
@@ -44,10 +43,11 @@ public class PhoneOrientationApp {
         scanner.close();
     }
 
-    private static void predictAndWrite(PhoneOrientationClassifier classifier, String testFileName, String resultFileName) {
+    private static void predictAndWrite(MainClassifier classifier, String testFileName, String resultFileName) {
         try (Scanner scanner = new Scanner(new FileInputStream(testFileName)); // Use FileInputStream
              PrintWriter writer = new PrintWriter(resultFileName)) {
             
+        	
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] values = line.split(",");

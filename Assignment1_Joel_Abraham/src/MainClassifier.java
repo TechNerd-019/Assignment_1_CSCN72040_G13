@@ -1,5 +1,5 @@
 
 
-public interface PhoneOrientationClassifier {
+public interface MainClassifier {
     public int predict(double[] testData);
 }
