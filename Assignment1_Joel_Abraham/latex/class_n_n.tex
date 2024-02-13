@@ -1,0 +1,94 @@
+\hypertarget{class_n_n}{}\doxysection{NN Class Reference}
+\label{class_n_n}\index{NN@{NN}}
+
+
+Class implementing the Nearest Neighbor (\mbox{\hyperlink{class_n_n}{NN}}) algorithm, implementing \mbox{\hyperlink{interface_main_classifier}{Main\+Classifier}}.  
+
+
+Inheritance diagram for NN\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_n_n}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_n_a99c28becd5053aa94f2376baa53068f3}{NN}} (String file\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_n_n}{NN}} class. Initializes the class and loads training data from a specified file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_n_n_aa2f20bdfeaf8659038ee3336f11feeef}{predict}} (double\mbox{[}$\,$\mbox{]} test\+Data)
+\begin{DoxyCompactList}\small\item\em Predicts the orientation label for the given test data using the \mbox{\hyperlink{class_n_n}{NN}} algorithm. \end{DoxyCompactList}\item 
+List$<$ double\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_n_n_a1b346da2b73b493350015f18baca49d7}{get\+Training\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Getter method for retrieving the training data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interface_main_classifier_a652afed517a666a3c91f404aa5390466}{predict}} (double\mbox{[}$\,$\mbox{]} test\+Data)
+\begin{DoxyCompactList}\small\item\em Predicts the orientation label for the given test data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class implementing the Nearest Neighbor (\mbox{\hyperlink{class_n_n}{NN}}) algorithm, implementing \mbox{\hyperlink{interface_main_classifier}{Main\+Classifier}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_n_a99c28becd5053aa94f2376baa53068f3}\label{class_n_n_a99c28becd5053aa94f2376baa53068f3}} 
+\index{NN@{NN}!NN@{NN}}
+\index{NN@{NN}!NN@{NN}}
+\doxysubsubsection{\texorpdfstring{NN()}{NN()}}
+{\footnotesize\ttfamily NN.\+NN (\begin{DoxyParamCaption}\item[{String}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{class_n_n}{NN}} class. Initializes the class and loads training data from a specified file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the file used for training. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_n_a1b346da2b73b493350015f18baca49d7}\label{class_n_n_a1b346da2b73b493350015f18baca49d7}} 
+\index{NN@{NN}!getTrainingData@{getTrainingData}}
+\index{getTrainingData@{getTrainingData}!NN@{NN}}
+\doxysubsubsection{\texorpdfstring{getTrainingData()}{getTrainingData()}}
+{\footnotesize\ttfamily List$<$ double\mbox{[}$\,$\mbox{]}$>$ NN.\+get\+Training\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter method for retrieving the training data. 
+
+\begin{DoxyReturn}{Returns}
+The list of double arrays representing the training data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_n_aa2f20bdfeaf8659038ee3336f11feeef}\label{class_n_n_aa2f20bdfeaf8659038ee3336f11feeef}} 
+\index{NN@{NN}!predict@{predict}}
+\index{predict@{predict}!NN@{NN}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily int NN.\+predict (\begin{DoxyParamCaption}\item[{double\mbox{[}$\,$\mbox{]}}]{test\+Data }\end{DoxyParamCaption})}
+
+
+
+Predicts the orientation label for the given test data using the \mbox{\hyperlink{class_n_n}{NN}} algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test\+Data} & An array of doubles representing the test data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The predicted orientation label. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_main_classifier_a652afed517a666a3c91f404aa5390466}{Main\+Classifier}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_k_n_n_af38a8010ad509c270f06b83ada87f79a}{KNN}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_n_n_8java}{NN.\+java}}\end{DoxyCompactItemize}

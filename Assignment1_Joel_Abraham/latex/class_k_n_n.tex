@@ -1,0 +1,86 @@
+\hypertarget{class_k_n_n}{}\doxysection{KNN Class Reference}
+\label{class_k_n_n}\index{KNN@{KNN}}
+
+
+Class implementing the K-\/\+Nearest Neighbor (\mbox{\hyperlink{class_k_n_n}{KNN}}) algorithm, extending \mbox{\hyperlink{class_n_n}{NN}} and implementing \mbox{\hyperlink{interface_main_classifier}{Main\+Classifier}}.  
+
+
+Inheritance diagram for KNN\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_k_n_n}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k_n_n_ac9a73b23c84ef6ce6ea182d216163554}{KNN}} (String file\+Name, int k)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_k_n_n}{KNN}} class. Initializes the class with a specified file name and the value of k. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_k_n_n_af38a8010ad509c270f06b83ada87f79a}{predict}} (double\mbox{[}$\,$\mbox{]} test\+Data)
+\begin{DoxyCompactList}\small\item\em Predicts the orientation label for the given test data using the \mbox{\hyperlink{class_k_n_n}{KNN}} algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_n_n}{NN}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_n_a99c28becd5053aa94f2376baa53068f3}{NN}} (String file\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_n_n}{NN}} class. Initializes the class and loads training data from a specified file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_n_n_aa2f20bdfeaf8659038ee3336f11feeef}{predict}} (double\mbox{[}$\,$\mbox{]} test\+Data)
+\begin{DoxyCompactList}\small\item\em Predicts the orientation label for the given test data using the \mbox{\hyperlink{class_n_n}{NN}} algorithm. \end{DoxyCompactList}\item 
+List$<$ double\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_n_n_a1b346da2b73b493350015f18baca49d7}{get\+Training\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Getter method for retrieving the training data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interface_main_classifier_a652afed517a666a3c91f404aa5390466}{predict}} (double\mbox{[}$\,$\mbox{]} test\+Data)
+\begin{DoxyCompactList}\small\item\em Predicts the orientation label for the given test data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class implementing the K-\/\+Nearest Neighbor (\mbox{\hyperlink{class_k_n_n}{KNN}}) algorithm, extending \mbox{\hyperlink{class_n_n}{NN}} and implementing \mbox{\hyperlink{interface_main_classifier}{Main\+Classifier}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_k_n_n_ac9a73b23c84ef6ce6ea182d216163554}\label{class_k_n_n_ac9a73b23c84ef6ce6ea182d216163554}} 
+\index{KNN@{KNN}!KNN@{KNN}}
+\index{KNN@{KNN}!KNN@{KNN}}
+\doxysubsubsection{\texorpdfstring{KNN()}{KNN()}}
+{\footnotesize\ttfamily KNN.\+KNN (\begin{DoxyParamCaption}\item[{String}]{file\+Name,  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{class_k_n_n}{KNN}} class. Initializes the class with a specified file name and the value of k. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the file used for training (passed to the superclass constructor). \\
+\hline
+{\em k} & The number of nearest neighbors to consider. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_n_n_af38a8010ad509c270f06b83ada87f79a}\label{class_k_n_n_af38a8010ad509c270f06b83ada87f79a}} 
+\index{KNN@{KNN}!predict@{predict}}
+\index{predict@{predict}!KNN@{KNN}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily int KNN.\+predict (\begin{DoxyParamCaption}\item[{double\mbox{[}$\,$\mbox{]}}]{test\+Data }\end{DoxyParamCaption})}
+
+
+
+Predicts the orientation label for the given test data using the \mbox{\hyperlink{class_k_n_n}{KNN}} algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test\+Data} & An array of doubles representing the test data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The predicted orientation label. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_main_classifier_a652afed517a666a3c91f404aa5390466}{Main\+Classifier}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_k_n_n_8java}{KNN.\+java}}\end{DoxyCompactItemize}
