@@ -41,12 +41,9 @@ public class Main {
 	        System.out.println("Prediction done using KNN classifier. Check the result file.");
 	    } else if (choice == 3) {
 	        AnotherClassifier ac = new AnotherClassifier();
-	        ac.train(trainingFileName);
-	        // Ask the user to input the test file
-	        System.out.println("Please enter the test file name:");
-	        testFileName = scanner.nextLine();
-	        predictAndWrite(ac, testFileName, resultFileName);
-	        System.out.println("Prediction done using Another Classifier. Check the result file.");
+	        ac.train(trainingFileName); // Just printing function name, no actual training
+	        ac.predict(null); // Just printing function name, no actual prediction
+	        System.out.println("Printing done using Another Classifier.");
 	    } else {
 	        System.out.println("Invalid choice. Please try again.");
 	    }
