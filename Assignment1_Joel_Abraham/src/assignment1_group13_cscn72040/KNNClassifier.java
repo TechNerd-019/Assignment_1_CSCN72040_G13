@@ -1,11 +1,5 @@
 package assignment1_group13_cscn72040;
 
-
-
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,21 +10,23 @@ import java.util.Map.Entry;
 
 public class KNNClassifier {
 
-    private List<DataPoint> trainingData;
-   
+    private double[][] rawData;
+    private int[] labels;
 
-    public KNNClassifier(List<DataPoint> trainingData) {
-        this.trainingData = trainingData;
-        
+    public KNNClassifier(double[][] rawData, int[] labels) {
+        this.rawData = rawData;
+        this.labels = labels;
     }
 
-
-    public String classify(DataPoint testPoint, int k) {
+    public String classify(double[] testPoint, int k) {
+        // Convert testPoint to a DataPoint object
+        DataPoint testDataPoint = new DataPoint(testPoint, "");
+        
         // Calculate distances to all training points
         List<DistanceLabelPair> distances = new ArrayList<>();
-        for (DataPoint trainingPoint : trainingData) {
-            double distance = calculateDistance(testPoint, trainingPoint);
-            distances.add(new DistanceLabelPair(distance, trainingPoint.getLabel()));
+        for (int i = 0; i < rawData.length; i++) {
+            double distance = calculateDistance(testDataPoint, new DataPoint(rawData[i], Integer.toString(labels[i])));
+            distances.add(new DistanceLabelPair(distance, Integer.toString(labels[i])));
         }
 
         // Sort distances in ascending order
@@ -55,7 +51,7 @@ public class KNNClassifier {
 
         return predictedClass;
     }
-
+    
     private double calculateDistance(DataPoint point1, DataPoint point2) {
         // Implement your distance metric (e.g., Euclidean distance)
         double[] features1 = point1.getFeatures();
@@ -66,28 +62,8 @@ public class KNNClassifier {
         }
         return Math.sqrt(sum);
     }
-
-
-    public static List<DataPoint> readDataFromFile(String filePath) throws IOException {
-        List<DataPoint> dataPoints = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
-                double[] features = new double[values.length - 1];
-                for (int i = 0; i < features.length; i++) {
-                    features[i] = Double.parseDouble(values[i]);
-                }
-                String label = values[values.length - 1];
-                DataPoint dataPoint = new DataPoint(features, label);
-                dataPoints.add(dataPoint);
-            }
-        }
-        return dataPoints;
-    }
-
-  
 }
+
 
 class DataPoint {
     private double[] features;
@@ -127,5 +103,5 @@ class DistanceLabelPair implements Comparable<DistanceLabelPair> {
     @Override
     public int compareTo(DistanceLabelPair other) {
         return Double.compare(this.distance, other.distance);
-    }
+    }
 }
