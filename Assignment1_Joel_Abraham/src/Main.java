@@ -73,9 +73,11 @@ public class Main {
         case 3:
           return "Portrait";
         case 4:
-          return "Landscape";
+          return "Portrait upside down";
         case 5:
-          return "Upside down";
+          return "Landscape Left";
+        case 6:
+        	return "Landscape Right";
         default:
           return "Unknown";
       }
